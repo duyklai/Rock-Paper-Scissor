@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+  <script>
+      //computerPlay() returns a string
+      function computerPlay()
+      {
+          let computerChoice = Math.floor(Math.random()*3);
+          switch(computerChoice)
+          {
+              case 0:
+                return "rock";
+                break;
+              case 1:
+                return "paper";
+                break;
+              case 2:
+                return "scissor";
+                break;
+              default:
+                break;
+          }
+      }
+
+      //playRound() plays a round of R-P-S with computerPlay
+      function playRound(playerSelection, computerSelection)
+      {
+        if(playerSelection.toLowerCase() === computerSelection)
+            return "Draw game!";
+        else if (playerSelection.toLowerCase() === "rock")
+        {
+            if(computerSelection === "scissor")
+                return "Player wins! " + playerSelection.toLowerCase() + " beats " + computerSelection;
+            else
+                return "Player loses! " + computerSelection + " beats " + playerSelection.toLowerCase();
+        }
+        else if (playerSelection.toLowerCase() === "paper")
+        {
+            if(computerSelection === "rock")
+                return "Player wins! " + playerSelection.toLowerCase() + " beats " + computerSelection;
+            else
+                return "Player loses!" + computerSelection + " beats " + playerSelection.toLowerCase();
+        }
+        else if (playerSelection.toLowerCase() === "scissor")
+        {
+            if(computerSelection === "paper")
+                return "Player wins! " + playerSelection.toLowerCase() + " beats " + computerSelection;
+            else
+                return "Player loses!" + computerSelection + " beats " + playerSelection.toLowerCase();
+        }
+      }
+
+      //game() plays R-P-S five times and return winner by score
+      function game()
+      {
+          let numOfRounds = 0;
+          let playerScore = 0;
+          let computerScore = 0;
+          while (numOfRounds < 5)
+          {
+              playerChoice = prompt("Select Rock, Paper, or Scissor");
+              computerChoice = computerPlay();
+              let whoWon = playRound(playerChoice, computerChoice);
+              if(whoWon.includes("wins"))
+              {
+                  playerScore++;
+                  console.log(whoWon);
+                  console.log("Current score: \n Player: " + playerScore + "\n Computer: " + computerScore);
+              }
+              else if(whoWon.includes("Draw"))
+              {
+                console.log(whoWon);
+                console.log("Current score: \n Player: " + playerScore + "\n Computer: " + computerScore);
+              }
+              else
+              {
+                computerScore++;
+                console.log(whoWon);
+                console.log("Current score: \n Player: " + playerScore + "\n Computer: " + computerScore);
+              }
+              numOfRounds++;
+          }
+      }
+  </script>
+</body>
+</html>
