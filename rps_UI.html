@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock-Paper-Scissors</title>
+  <link rel="stylesheet" type="text/css" href="resources/style.css">
+</head>
+<body>
+  <header>
+      <h1>Play a game of rock-paper-scissor!</h1>
+  </header>
+  
+  <!-- 3 buttons for choices -->
+  <div id="container-buttons">
+    <div id="buttons">
+        <button id="Rock" class="choices">Rock</button>
+        <div class="divider"></div>
+        <button id="Paper" class="choices">Paper</button>
+        <div class="divider"></div>
+        <button id="Scissor" class="choices">Scissor</button>
+    </div>
+  </div>
+
+  <div id="container-result">
+    <p>Winner:</p>
+    <p1></p1>
+  </div>
+
+  <div id="container-table">
+    <table>
+      <tr>
+        <th scope="row">Rounds</th>
+        <td id="rounds">0</td>
+      </tr>
+      <tr>
+        <th scope="row">Wins</th>
+        <td id="wins">0</td>
+      </tr>
+      <tr>
+        <th scope="row">Losses</th>
+        <td id="losses">0</td>
+      </tr>
+      <tr>
+        <th scope="row">Ties</th>
+        <td id="ties">0</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="final">
+    <p id="finalPara"></p>
+    <p2></p2>
+  </div>
+
+  <button id="reset" onclick="resetGame()">Reset Game</button>
+
+  <script src="..\rock-paper-scissors\resources\rps.js"></script>
+</body>
+</html>
